@@ -5,12 +5,97 @@
   <title>ENLACES POBRECRAFT</title>
   <link rel="icon" type="image/png" href="img/icon.png">
   <style>
-    body {background-color: #0a0a0a; font-family: sans-serif; padding: 20px;}
-    h1, h2, p, li {color: #f0f0f0;}
-    a {color: #dc3545; text-decoration: none;}
-    a:hover {text-decoration: underline;}
-    img {display: block; margin-top: 10px; margin-bottom: 10px; border: 1px solid #333;}
-    li {margin-bottom: 40px; list-style-type: square;}
+    body {
+      background-color: #0a0a0a;
+      font-family: sans-serif;
+      padding: 3px;
+    }
+    h1, h2, p, li {
+      color: #f0f0f0;
+    }
+    a {
+      color: #dc3545;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    img {
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 1px;
+      list-style-type: square;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1px;
+      border-bottom: 1px solid #333;
+    }
+    .tab-label {
+      border: 1px solid #333;
+      border-bottom: none;
+      padding: 5px 10px;
+      background-color: #0a0a0a;
+      display: flex;
+      align-items: center;
+      gap: 0px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .tab-label span {
+      color: #888;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .tab-label .emoji {
+      font-size: 15px;
+      color: #888;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    #tab1:checked ~ .tabs .tab-label[for="tab1"],
+    #tab2:checked ~ .tabs .tab-label[for="tab2"],
+    #tab3:checked ~ .tabs .tab-label[for="tab3"],
+    #tab4:checked ~ .tabs .tab-label[for="tab4"] {
+      border-color: #dc3545;
+      background-color: #121212;
+    }
+    #tab1:checked ~ .tabs .tab-label[for="tab1"] span,
+    #tab2:checked ~ .tabs .tab-label[for="tab2"] span,
+    #tab3:checked ~ .tabs .tab-label[for="tab3"] span,
+    #tab4:checked ~ .tabs .tab-label[for="tab4"] span,
+    #tab5:checked ~ .tabs .tab-label[for="tab5"] span {
+      color: #dc3545;
+    }
+ 
+    .tab-content {
+      display: none;
+    }
+
+    #tab1:checked ~ .contenidos #contenido-programas,
+    #tab2:checked ~ .contenidos #contenido-juegos,
+    #tab3:checked ~ .contenidos #contenido-sistemas,
+	#tab4:checked ~ .contenidos #contenido-pack-de-optimizacion,
+	#tab5:checked ~ .contenidos #contenido-como-descargar {
+      display: block;
+    }
+
+   
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+      color: #888;
+    }
   </style>
 </head>
 <body>
@@ -19,36 +104,145 @@
   <p>Encuentra juegos, programas y optimizaciones para tu Canaima o PC de bajos recursos.</p>
   <hr>
 
-  <h2>Sección de Programas</h2>
+  <input type="radio" name="tabs" id="tab1" checked>
+  <input type="radio" name="tabs" id="tab2">
+  <input type="radio" name="tabs" id="tab3">
+  <input type="radio" name="tabs" id="tab4">
+  <input type="radio" name="tabs" id="tab5">
+
+  <div class="tabs">
+    <label for="tab1" class="tab-label">
+      <span>Programas</span>
+    </label>
+    <label for="tab2" class="tab-label">
+      <span>Juegos</span>
+    </label>
+    <label for="tab3" class="tab-label">
+      <span>Windows</span>
+    </label>
+	 </label>
+    <label for="tab4" class="tab-label">
+      <span>Pack de Optimizacion</span>
+    </label>
+	<label for="tab5" class="tab-label">
+      <span>Como Descargar</span>
+    </label>
+  </div>
+
+  <div class="contenidos">
+    
+    <div id="contenido-programas" class="tab-content">
+      <h2>Sección de Programas</h2>
+      <ul>
+	     <li>
+          <strong>Photoshop CS3 Portable</strong><br>
+          <a href="https://ouo.io/gMRV6c" target="_blank"><strong>[DESCARGAR]</strong></a>
+          <img src="img/Photoshop.png" alt="foto insana xd" width="100">
+         </li>
+		 
+		 <li>
+          <strong>VSDC Free Video Editor v6.4.2.107</strong><br>
+          <a href="https://ouo.io/u4C2xP" target="_blank"><strong>[DESCARGAR]</strong></a>
+          <img src="img/editor.png" alt="conectate a internet xd" width="100">
+         </li>
+		 
+		 <li>
+          <strong>Navegador Mypal (Especial para XP/7)</strong><br>
+          <a href="https://github.com/Feodor2/Mypal68/releases" target="_blank"><strong>[DESCARGAR]</strong></a>
+          <img src="img/mypal.png" alt="no tienes wifi xd" width="100">
+         </li>
+		 
+		 <li>
+          <strong>Bandicam</strong><br>
+          <a href="https://ouo.io/gpW7dge" target="_blank"><strong>[DESCARGAR]</strong></a>
+          <img src="img/Bandicam.png" alt="no wifi xd" width="100">
+         </li>
+		 
+         <li>		 
+          <strong>Fraps</strong><br>
+          <a href="https://ouo.io/a7gKPd" target="_blank"><strong>[DESCARGAR]</strong></a>
+          <img src="img/Fraps.png" alt="no wifi xd" width="100">
+		 </li>
+		 
+		 <li>
+      <strong>Rufus</strong><br>
+       <a href="https://rufus.ie/downloads/" target="_blank"><strong>DESCARGAR]</strong></a>
+	   <img src="img/rufus.png" alt="para que puedas ver al rufus tiene que conectar te a internet" width="100">
+	     </li>   
+	 </ul>
+	</div> 
+	   
+      
+
+    
+    <div id="contenido-juegos" class="tab-content">
+      <h2>Sección de Juegos</h2>
+      <ul>
+         <li>	  
+          <strong>Counter-Strike 1.6 Online</strong><br>
+          <a href="https://www.mediafire.com/file/ag28b7eumf10go2" target="_blank"><strong>[DESCARGAR]</strong></a>
+          <img src="img/counter.png" alt="cs 1.6" width="100">
+		 </li>
+		 
+         <li>
+          <strong>Five Nights at Freddy's 2</strong><Br>
+          <a href="https://ouo.io/fpOe5N" target="_blank"><strong>[DESCARGAR]</strong></a>
+          <img src="img/fredy.png" alt="no wifi xd" width="100">
+         </li>
+		 
+		 <li>
+          <strong>Warcraft III V1.27</strong><br>
+          <a href="https://ouo.io/m4KS2PJ" target="_blank"><strong>[DESCARGAR]</strong></a>
+          <img src="img/warcraft.png" alt="no wifi xd" width="200"
+	      </li>
+		  
+          <li>  
+          <strong>Minecraft 1.8.9</strong><br>
+          <a href="https://www.mediafire.com/file/eldp4t0omiizs1t" target="_blank"><strong>[DESCARGAR]</strong></a>
+          <img src="img/minecraft.png" alt="no wifi xd" width="150">
+		  </li>
+      </ul>
+    </div>
+
+    <div id="contenido-pack-de-optimizacion" class="tab-content"> 
+    <p>Aqui estan los pack de yo cree para aumentar el rendimiento en windows xp y windows 7. (Solo sirve para las canaimas letras azules)
+	<br>
+	<br>
+   <ul>
+    <p>Optimizador de windows 7 v1.5</p>
+    <li><a href="https://ouo.io/mJlsrX" target="_blank"><strong>¡LINK!</strong></a></li>
+	
+	<br><p> Optimizador de windows xp v1.5</p>
+	<li><a href="https://ouo.io/sBRGKnL" target="_blank"><strong>¡LINK!</strong></a></li>
+	
+	<br><p> Optimizador de windows 7 v1</p>
+	<li><a href="https://ouo.io/5c7kv7" target="_blank"><strong>¡LINK!</strong></a></li>
+	
+	<br><p> Optimizador de windows xp v1</p>
+	<li><a href="https://ouo.io/bvbaXE" target="_blank"><strong>¡LINK!</strong></a></li>
+   </ul>	
+   </div>
+ 
+ 
+    <div id="contenido-sistemas" class="tab-content">
+      <h2>Sección de Sistemas</h2>
+      <p>Próximamente enlaces a Windows optimizados para las canaima y pc de bajos recursos.</p>
+    </div>
   
-  <ul>
-    <li>
-      <strong>Photoshop CS3 Portable</strong>
-      <br>
-      <a href="https://ouo.io/gMRV6c" target="_blank"><strong>[DESCARGAR]</strong></a>
-      <img src="img/Photoshop.png" alt="foto insana xd" width="200">
-      <a href="https://m.youtube.com/watch?v=QH3w7XKf8Ns" target="_blank">¿Cómo saltar la publicidad?</a>
-    </li>
-
-    <li>
-      <strong>VSDC Free Video Editor v6.4.2.107</strong>
-      <br>
-      <a href="https://ouo.io/u4C2xP" target="_blank"><strong>[DESCARGAR]</strong></a>
-      <img src="img/editor.png" alt="conectate a internet xd" width="200">
-      <a href="https://m.youtube.com/watch?v=QH3w7XKf8Ns" target="_blank">¿Cómo saltar la publicidad?</a>
-    </li>
-
-    <li>
-      <strong>Navegador Mypal (Especial para XP/7)</strong>
-      <br>
-       <a href="https://ouo.io/8K1D4Lr" target="_blank"><strong>[DESCARGAR]</strong></a>
-       <img src="img/mypal.png" alt="no tienes wifi xd" width="200">
-       <a href="https://m.youtube.com/watch?v=QH3w7XKf8Ns" target="_blank">¿Cómo saltar la publicidad?</a>
-    </li>
-  </ul>
-
-  <hr>
-  <p align="center">Creado por <strong>pobrecraft_15</strong></p>
+     <div id="contenido-como-descargar" class="tab-content">
+    <h2>Sección para Poder Saltar la Publicidad</h2>
+	<p>Aqui te dejo el mejor tutorial mas explicativo para poder saltar la publicidad</p>
+   <ul>
+	 <li><a href="https://m.youtube.com/watch?v=QH3w7XKf8Ns" target="_blank"><strong>¡LINK DEL VIDEO!</strong></a></li>
+   </ul>	
+  </div>
+  </div>
+      
+  
+	
+  <footer>
+    <p>Creado por <strong>pobrecraft_15</strong></p>
+  </footer>
 
 </body>
 </html>
