@@ -3,493 +3,400 @@
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Pobrecraft: Descarga gratis juegos, programas y optimizaciones para tu Canaima, Atom o PC de bajos recursos. Packs probados en Windows XP, 7 y 10. ¡Revive tu PC vieja!">
-  <meta name="keywords" content="juegos para canaima, optimizar pc baja recursos, windows minios, packs de juegos, atom n455">
+  <meta name="keywords" content="juegos para canaima, optimizar pc baja recursos, windows minios, packs de juegos, atom n455, windows xp, windows 7, 32bits">
   <meta name="author" content="Pobrecraft">
-  <title>ENLACES POBRECRAFT</title>
+  <title>ENLACES POBRECRAFT - Juegos y Optimizaciones para PC</title>
   <link rel="icon" type="image/png" href="img/icon.png">
   <style>
-     body {
-  background-image: url("img/fondo.jpg");
-  background-size: cover;               
-  background-attachment: fixed;          
-  background-repeat: no-repeat;        
-  font-family: sans-serif;
-  padding: 3px;
-}
-    h1, h2, p, li {
-      color: #f0f0f0;
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    a {
+
+    body {
+      background: #000000;
+      font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #0a0a0a;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      border: 1px solid #dc3545;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 0rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      background: linear-gradient(135deg, #ffffff, #dc3545);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subheader {
+      color: #cccccc;
+      font-size: 1.1rem;
+      border-left: 3px solid #dc3545;
+      padding-left: 1rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .badge {
+      background: #1a1a1a;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #cccccc;
+      border: 1px solid #dc3545;
+    }
+
+    .badge span {
       color: #dc3545;
-      text-decoration: none;
+      font-weight: bold;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    img {
-      display: block;
-      margin-top: 5px;
-      margin-bottom: 15px;
-    }
-    li {
-      margin-bottom: 1px;
-      list-style-type: square;
+
+    .tabs-container {
+      margin: 2rem 0 1.5rem;
     }
 
     .tabs {
       display: flex;
-      gap: 3px;
-      margin-bottom: 1px;
-      border-bottom: 1px solid #333;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      border-bottom: 1px solid #dc3545;
+      padding-bottom: 1rem;
     }
+
     .tab-label {
-      border: 1px solid #333;
-      border-bottom: none;
-      padding: 5px 10px;
-      background-color: #0a0a0a;
-      display: flex;
-      align-items: center;
-      gap: 0px;
+      background: #0a0a0a;
+      padding: 0.75rem 1.8rem;
+      border-radius: 60px;
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.3s ease;
+      border: 1px solid #dc3545;
+      font-weight: 600;
+      color: #cccccc;
     }
-    .tab-label span {
-      color: #888;
-      font-size: 15px;
-      font-weight: bold;
-    }
-    .tab-label .emoji {
-      font-size: 15px;
-      color: #888;
+
+    .tab-label:hover {
+      background: #dc3545;
+      color: #ffffff;
+      transform: translateY(-2px);
     }
 
     input[type="radio"] {
       display: none;
     }
 
-    #tab1:checked ~ .tabs .tab-label[for="tab1"],
-    #tab2:checked ~ .tabs .tab-label[for="tab2"],
-    #tab3:checked ~ .tabs .tab-label[for="tab3"],
-    #tab4:checked ~ .tabs .tab-label[for="tab4"],
-    #tab5:checked ~ .tabs .tab-label[for="tab5"]	{
+    #tab1:checked ~ .tabs-container .tabs .tab-label[for="tab1"],
+    #tab2:checked ~ .tabs-container .tabs .tab-label[for="tab2"],
+    #tab3:checked ~ .tabs-container .tabs .tab-label[for="tab3"],
+    #tab4:checked ~ .tabs-container .tabs .tab-label[for="tab4"],
+    #tab5:checked ~ .tabs-container .tabs .tab-label[for="tab5"] {
+      background: #dc3545;
       border-color: #dc3545;
-      background-color: #121212;
+      color: white;
+      box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
     }
-    #tab1:checked ~ .tabs .tab-label[for="tab1"] span,
-    #tab2:checked ~ .tabs .tab-label[for="tab2"] span,
-    #tab3:checked ~ .tabs .tab-label[for="tab3"] span,
-    #tab4:checked ~ .tabs .tab-label[for="tab4"] span,
-    #tab5:checked ~ .tabs .tab-label[for="tab5"] span {
-      color: #dc3545;
+
+    .contenidos {
+      margin-top: 2rem;
     }
- 
+
     .tab-content {
       display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px);}
+      to { opacity: 1; transform: translateY(0);}
     }
 
     #tab1:checked ~ .contenidos #contenido-programas,
     #tab2:checked ~ .contenidos #contenido-juegos,
     #tab3:checked ~ .contenidos #contenido-sistemas,
-	#tab4:checked ~ .contenidos #contenido-pack-de-optimizacion,
-	#tab5:checked ~ .contenidos #contenido-como-descargar {
+    #tab4:checked ~ .contenidos #contenido-pack-de-optimizacion,
+    #tab5:checked ~ .contenidos #contenido-como-descargar {
       display: block;
     }
 
-   
-    footer {
-      margin-top: 30px;
+    .seccion-titulo {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      border-left: 5px solid #dc3545;
+      padding-left: 1rem;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: #0a0a0a;
+      border-radius: 1.2rem;
+      padding: 1.2rem;
+      transition: all 0.3s ease;
+      border: 1px solid #dc3545;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      border-top: 1px solid #333;
-      padding-top: 10px;
-      color: #888;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #ffffff;
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.4);
+    }
+
+    .card img {
+      width: 80px;
+      height: auto;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      background: #000000;
+      padding: 8px;
+    }
+
+    .card strong {
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-descargar {
+      display: inline-block;
+      background: #dc3545;
+      color: white;
+      padding: 0.6rem 4rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 0.8rem;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .btn-descargar:hover {
+      background: #b91c1c;
+      transform: scale(1.02);
+      text-decoration: none;
+    }
+
+    .lista-simple {
+      background: #0a0a0a;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid #dc3545;
+    }
+
+    .lista-simple li {
+      margin-bottom: 1rem;
+      list-style: none;
+      border-bottom: 1px solid #dc3545;
+      padding: 0.8rem 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #dc3545;
+      color: #888888;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .grid-cards {
+        grid-template-columns: 1fr;
+      }
+      .tab-label {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    p {
+      color: #cccccc;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    a:not(.btn-descargar) {
+      color: #dc3545;
+      text-decoration: none;
+    }
+
+    a:not(.btn-descargar):hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <h1>ENLACES POBRECRAFT</h1>
-  <p>Encuentra juegos, programas y optimizaciones para tu Canaima o PC de bajos recursos.</p>
-  <hr>
+<div class="container">
+  <div class="header">
+    <h1>ENLACES POBRECRAFT</h1>
+    <div class="subheader">Juegos, programas y optimizaciones 100% probados para PC de bajos recursos</div>
+    
+    
+    </div>
+  </div>
 
+ 
   <input type="radio" name="tabs" id="tab1" checked>
   <input type="radio" name="tabs" id="tab2">
   <input type="radio" name="tabs" id="tab3">
   <input type="radio" name="tabs" id="tab4">
   <input type="radio" name="tabs" id="tab5">
 
-  <div class="tabs">
-    <label for="tab1" class="tab-label">
-      <span>Programas</span>
-    </label>
-    <label for="tab2" class="tab-label">
-      <span>Juegos</span>
-    </label>
-    <label for="tab3" class="tab-label">
-      <span>Windows</span>
-    </label>
-	 </label>
-    <label for="tab4" class="tab-label">
-      <span>Pack de Optimizacion</span>
-    </label>
-	<label for="tab5" class="tab-label">
-      <span>¿Como Descargar?</span>
-    </label>
+  <div class="tabs-container">
+    <div class="tabs">
+      <label for="tab1" class="tab-label">Programas</label>
+      <label for="tab2" class="tab-label">Juegos</label>
+      <label for="tab3" class="tab-label">Windows</label>
+      <label for="tab4" class="tab-label">Pack Optimización</label>
+      <label for="tab5" class="tab-label">Cómo Descargar</label>
+    </div>
   </div>
 
   <div class="contenidos">
     
     <div id="contenido-programas" class="tab-content">
-      <h2>Sección de Programas</h2>
-      <ul>
-	     <li>
-          <strong>Photoshop CS3 Portable</strong><br>
-          <a href="https://ouo.io/gMRV6c" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Photoshop.png" alt="foto insana xd" width="100">
-         </li>
-		 
-		 <li>
-          <strong>VSDC Free Video Editor v6.4.2.107</strong><br>
-          <a href="https://ouo.io/u4C2xP" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/editor.png" alt="conectate a internet xd" width="100">
-         </li>
-		 
-		 <li>
-          <strong>Navegador Mypal (Especial para XP/7)</strong><br>
-          <a href="https://github.com/Feodor2/Mypal68/releases" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/mypal.png" alt="no tienes wifi xd" width="100">
-         </li>
-		 
-		 <li>
-          <strong>Bandicam</strong><br>
-          <a href="https://ouo.io/gpW7dge" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Bandicam.png" alt="no wifi xd" width="100">
-         </li>
-		 
-         <li>		 
-          <strong>Fraps</strong><br>
-          <a href="https://ouo.io/a7gKPd" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Fraps.png" alt="no wifi xd" width="100">
-		 </li>
-		 
-	   <li>
-       <strong>Rufus</strong><br>
-       <a href="https://rufus.ie/downloads/" target="_blank"><strong>[DESCARGAR]</strong></a>
-	   <img src="img/rufus.png" alt="para que puedas ver el rufus tiene que conectarte a internet" width="100">
-	   </li>  
+      <h2 class="seccion-titulo">Programas</h2>
+      <div class="grid-cards">
+        <div class="card"><strong>Photoshop CS3</strong><img src="img/Photoshop.png" alt="Photoshop"><a href="https://ouo.io/gMRV6c" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>VSDC Editor</strong><img src="img/editor.png" alt="Editor"><a href="https://ouo.io/u4C2xP" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Mypal Browser</strong><img src="img/mypal.png" alt="Mypal"><a href="https://github.com/Feodor2/Mypal68/releases" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Bandicam</strong><img src="img/Bandicam.png" alt="Bandicam"><a href="https://ouo.io/gpW7dge" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Fraps</strong><img src="img/Fraps.png" alt="Fraps"><a href="https://ouo.io/a7gKPd" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Rufus</strong><img src="img/rufus.png" alt="Rufus"><a href="https://rufus.ie/downloads/" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>F.lux</strong><img src="img/F.lux.png" alt="F.lux"><a href="https://justgetflux.com/" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Loquendo</strong><img src="img/loquendo.png" alt="Loquendo"><a href="https://ouo.io/WfbTVw" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Paint.net</strong><img src="img/paint.png" alt="Paint"><a href="https://ouo.io/Vf2mDa" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Videopad</strong><img src="img/videopad.png" alt="Videopad"><a href="https://www.nchsoftware.com/videopad/es/" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Pivot Animator</strong><img src="img/pivot.png" alt="Pivot"><a href="https://www.pivotanimator.net/Download.php" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>7-Zip</strong><img src="img/7zip.png" alt="Pivot"><a href="https://7-zip.org/" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+	    <div class="card"><strong>WinRAR</strong><img src="img/WinRaR.png" alt="Pivot"><a href="https://www.win-rar.com/download.html?L=0" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Driver Booster</strong><img src="img/Driver Booster.png" alt="Pivot"><a href="https://ouo.io/hR7noxT" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Easy Driver Packs 5.2.5.5 (x86) </strong><img src="img/drivers.png" alt="Pivot"><a href="https://ouo.io/cS8KmUy" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>3DP Net </strong><img src="img/3DP Net.jpg" alt="Pivot"><a href="https://www.3dpchip.com/3dpchip/3dp/net_down_en.php" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+      </div>
+    </div>
 
-	   <li>
-       <strong>F.lux (cuida los ojos de la luz azul)</strong><br>
-       <a href="https://justgetflux.com/" target="_blank"><strong>[DESCARGAR]</strong></a>
-	   <img src="img/F.lux.png" alt="para que puedas ver el F.lux tiene que conectarte a internet" width="100">
-	   </li>
-
-       <li>
-       <strong>Loquendo</strong><br>
-       <a href="https://ouo.io/WfbTVw" target="_blank"><strong>[DESCARGAR]</strong></a>
-	   <img src="img/loquendo.png" alt="para que puedas ver el loquendo tiene que conectarte a internet xd" width="100">
-	   </li>
-
-       <li>
-       <strong>Paint.net</strong><br>
-       <a href="https://ouo.io/Vf2mDa" target="_blank"><strong>[DESCARGAR]</strong></a>
-	   <img src="img/paint.png" alt="para que puedas ver el Paint.net tiene que conectarte a internet xd" width="100">
-	   </li>	   
-	   
-	   <li>
-       <strong>Videopad</strong><br>
-       <a href="https://www.nchsoftware.com/videopad/es/index.html?srsltid=AfmBOor5ApakdSVWteLwugtyS7fDRwBV7OWyfrClxoxsZdSb7MF1j-__" target="_blank"><strong>[DESCARGAR]</strong></a>
-	   <img src="img/videopad.png" alt="para que puedas ver el videopad tiene que conectarte a internet xd" width="100">
-	   </li>
-	   
-	   <li>
-       <strong>Pivot animator</strong><br>
-       <a href="https://www.pivotanimator.net/Download.php" target="_blank"><strong>[DESCARGAR]</strong></a>
-	   <img src="img/pivot.png" alt="para que puedas ver el pivot tiene que conectarte a internet xd" width="150">
-	   </li>
-	   
-	 </ul>
-	</div> 
-	   
-      
+    <div id="contenido-juegos" class="tab-content">
+      <h2 class="seccion-titulo">Juegos</h2>
+      <div class="grid-cards">
+        <div class="card"><strong>Counter Strike 1.6</strong><img src="img/counter.png" alt="CS 1.6"><a href="https://www.mediafire.com/file/ag28b7eumf10go2" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>GTA San Andreas</strong><img src="img/gta.png" alt="GTA"><a href="https://ouo.io/rAuonr4" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Minecraft 1.8.9</strong><img src="img/minecraft.png" alt="Minecraft"><a href="https://www.mediafire.com/file/eldp4t0omiizs1t" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Terraria</strong><img src="img/Terraria.png" alt="Terraria"><a href="https://ouo.io/z8gIXv" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Halo Combat Evolved</strong><img src="img/halo.png" alt="Halo"><a href="https://ouo.io/CKZ0BmQ" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Doom</strong><img src="img/doom.jpg" alt="Doom"><a href="https://ouo.io/4IjRqK" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Five Nights at Freddy's 2</strong><img src="img/fredy.png" alt="fnaf"><a href="https://ouo.io/fpOe5N" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>GTA Vice City</strong><img src="img/vice city.png" alt="fnaf"><a href="https://ouo.io/T0dSXG" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Warcraft III V1.27</strong><img src="img/warcraft.png" alt="culo"><a href="https://ouo.io/m4KS2PJ" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Plantas VS Zombie</strong><img src="img/plantas xd.png" alt="lol"><a href="https://ouo.io/TjmDqyO" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Death Road to Canada</strong><img src="img/canada.jpg" alt="wifi"><a href="https://ouo.io/Xw2w0LX" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Call of Duty 1</strong><img src="img/Call of Duty 1.png" alt="xd"><a href="https://ouo.io/5HvUN3" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>GTA 3 </strong><img src="img/GTA 3.png" alt="xd"><a href="https://ouo.io/eH07qB" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>AssaultCube</strong><img src="img/asalto.png" alt="xd"><a href="https://ouo.io/sO4Xjj" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Dragonball z budokai x</strong><img src="img/Dragonball z budokai x.png" alt="xd"><a href="https://ouo.io/M3S5SN" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Fruit ninja</strong><img src="img/Fruit ninja.png" alt="xd"><a href="https://ouo.io/fo50KQ" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Quake III arena</strong><img src="img/Quake III arena.png" alt="xd"><a href="https://ouo.io/jzz1Jc" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>SPP-Containment Breach V0.5.2</strong><img src="img/SPP-Containment Breach.jpg" alt="xd"><a href="https://ouo.io/vrfn0H" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>SPP-087-B</strong><img src="img/SPP-087-B.png" alt="xd"><a href="https://ouo.io/l36lLE" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Street Racing Syndicate</strong><img src="img/Street Racing Syndicate.jpg" alt="xd"><a href="https://ouo.io/7YuPfd" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Sonic CD</strong><img src="img/Sonic CD.jpg" alt="xd"><a href="https://ouo.io/Hhx1oLj" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Classicube</strong><img src="img/Classicube.png" alt="xd"><a href="https://www.classicube.net/download/" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		
+		</div>
+		
+		<h2 class="seccion-titulo">Pack de juegos flash</h2>
+		<div class="grid-cards">
+		
+		<div class="card"><strong>Pack 1</strong><img src="img/flash.png" alt="xd"><a href="https://ouo.io/t4J479A" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Pack 2</strong><img src="img/flash.png" alt="xd"><a href="https://ouo.io/TL9LlW" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Pack 3</strong><img src="img/flash.png" alt="xd"><a href="https://ouo.io/mRE9Kc" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Papas Games</strong><img src="img/papa.jpg" alt="xd"><a href="https://ouo.io/EaO7JY" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+		<div class="card"><strong>Epic Battle Fantasy</strong><img src="img/Epic Battle Fantasy.jpg" alt="xd"><a href="https://ouo.io/fjfIsZ" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+  
+      </div>
+    </div>
 
     
-    <div id="contenido-juegos" class="tab-content">
-      <h2>Sección de Juegos</h2>
-      <ul>
-         <li>	  
-          <strong>Counter-Strike 1.6 Online (Optijuegos)</strong><br>
-          <a href="https://www.mediafire.com/file/ag28b7eumf10go2" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/counter.png" alt="cs 1.6" width="100">
-		 </li>
-		 
-         <li>
-          <strong>Five Nights at Freddy's 2</strong><Br>
-          <a href="https://ouo.io/fpOe5N" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/fredy.png" alt="no wifi xd" width="100">
-         </li>
-		 
-		 <li>
-          <strong>Warcraft III V1.27</strong><br>
-          <a href="https://ouo.io/m4KS2PJ" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/warcraft.png" alt="no wifi xd" width="200"
-	      </li>
-		  
-          <li>  
-          <strong>Minecraft 1.8.9 (Optijuegos)</strong><br>
-          <a href="https://www.mediafire.com/file/eldp4t0omiizs1t" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/minecraft.png" alt="no wifi xd" width="150">
-		  </li>
-		  
-		  <li>  
-          <strong>GTA San Andreas</strong><br>
-          <a href="https://ouo.io/rAuonr4" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/gta.png" alt="no wifi xd" width="150">
-		  </li>
-
-	      <li>  
-          <strong>GTA Vice City</strong><br>
-          <a href="https://ouo.io/T0dSXG" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/vice city.png" alt="no wifi xd" width="150">
-		  </li>	
-
-          <li>  
-          <strong>Terraria</strong><br>
-          <a href="https://ouo.io/z8gIXv" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Terraria.png" alt="no wifi xd" width="200">
-		  </li>	
-
-          <li>  
-          <strong>Halo Combat Evolved</strong><br>
-          <a href="https://ouo.io/CKZ0BmQ" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/halo.png" alt="no wifi xd" width="150">
-		  </li>	
-
-          <li>  
-          <strong>Plantas VS Zombie</strong><br>
-          <a href="https://ouo.io/TjmDqyO" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/plantas xd.png" alt="no wifi triple xd" width="150">
-		  </li>	
-		  
-          <li>  
-          <strong>Death Road to Canada</strong><br>
-          <a href="https://ouo.io/Xw2w0LX" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/canada.jpg" alt="no wifi triple xd" width="150">
-		  </li>	
-
-          <li>  
-          <strong>Call of Duty 1</strong><br>
-          <a href="https://ouo.io/5HvUN3" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Call of Duty 1.png" alt="no hay wifi triple xd" width="200">
-		  </li>
-
-          <li>  
-          <strong>GTA 3 </strong><br>
-          <a href="https://ouo.io/eH07qB" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/GTA 3.png" alt="no hay wifi triple xd" width="150">
-		  </li>	
-
-          <li>  
-          <strong>Doom</strong><br>
-          <a href="https://ouo.io/4IjRqK" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/doom.jpg" alt="no hay wifi triple xd" width="120">
-		  </li>
-
-          <li>  
-          <strong>AssaultCube</strong><br>
-          <a href="https://ouo.io/sO4Xjj" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/asalto.png" alt="no hay wifi triple xd" width="200">
-		  </li>	
-		  
-          <li>  
-          <strong>Dragonball z budokai x</strong><br>
-          <a href="https://ouo.io/M3S5SN" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Dragonball z budokai x.png" alt="no hay wifi triple xd" width="200">
-		  </li>  
-
-          <li>  
-          <strong>Fruit ninja</strong><br>
-          <a href="https://ouo.io/fo50KQ" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Fruit ninja.png" alt="no hay wifi triple xd" width="150">
-		  </li>		  
-		  
-		  <li>  
-          <strong>Quake III arena</strong><br>
-          <a href="https://ouo.io/jzz1Jc" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Quake III arena.png" alt="no hay wifi triple xd" width="150">
-		  </li>
-		  
-		  <li>  
-          <strong>SPP-Containment Breach V0.5.2</strong><br>
-          <a href="https://ouo.io/vrfn0H" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/SPP-Containment Breach.jpg" alt="no hay wifi triple xd" width="150">
-		  </li>
-		  
-		  <li>  
-          <strong>SPP-087-B</strong><br>
-          <a href="https://ouo.io/l36lLE" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/SPP-087-B.png" alt="no hay wifi triple xd" width="150">
-		  </li>
-		  
-		  <li>  
-          <strong>Street Racing Syndicate</strong><br>
-          <a href="https://ouo.io/7YuPfd" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Street Racing Syndicate.jpg" alt="no hay wifi triple xd" width="150">
-		  </li>
-		  
-		  <li>  
-          <strong>Sonic CD</strong><br>
-          <a href="https://ouo.io/Hhx1oLj" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Sonic CD.jpg" alt="no hay wifi triple xd" width="200">
-		  </li>
-		  
-		  <li>  
-          <strong>Classicube</strong><br>
-          <a href="https://www.classicube.net/download/" target="_blank"><strong>[DESCARGAR]</strong></a>
-          <img src="img/Classicube.png" alt="no hay wifi triple xd" width="200">
-		  </li>
-      </ul>
-<hr>	
-	  <h1>Pack de juegos flash</h1>
-	  <ul>
-	  
-	  <li>
-	  <strong>Pack 1 </strong><br>
-      <a href="https://ouo.io/t4J479A" target="_blank"><strong>[DESCARGAR]</strong></a>
-      <img src="img/flash.png" alt="no hay wifi triple xd" width="120">
-	  </li>
-	  
-	  <li>
-	  <strong>Pack 2 </strong><br>
-      <a href="https://ouo.io/TL9LlW" target="_blank"><strong>[DESCARGAR]</strong></a>
-      <img src="img/flash.png" alt="no hay wifi triple xd" width="120">
-	  </li>
-	  
-	  <li>
-	  <strong>Pack 3 </strong><br>
-      <a href="https://ouo.io/mRE9Kc" target="_blank"><strong>[DESCARGAR]</strong></a>
-      <img src="img/flash.png" alt="no hay wifi triple xd" width="120">
-	  </li>
-	  
-	  <li>
-	  <strong>Papas Games</strong><br>
-      <a href="https://ouo.io/EaO7JY" target="_blank"><strong>[DESCARGAR]</strong></a>
-      <img src="img/papa.jpg" alt="no hay wifi triple xd" width="120">
-	  </li>
-	  
-	  <li>
-	  <strong>Epic Battle Fantasy</strong><br>
-      <a href="https://ouo.io/fjfIsZ" target="_blank"><strong>[DESCARGAR]</strong></a>
-      <img src="img/Epic Battle Fantasy.jpg" alt="no hay wifi triple xd" width="120">
-	  </li>
-		  
-    </div>
-
-    <div id="contenido-pack-de-optimizacion" class="tab-content"> 
-    <p>Aqui estan los pack de yo cree para aumentar el rendimiento en windows xp y windows 7. (Solo sirve para las canaimas letras azules)
-	<br>
-	<br>
-	
-   <ul>
-    <li>
-	<strong>Optimizador de windows xp v2.0</strong><br>
-	<a href="https://ouo.io/ZkdG1I7" target="_blank"><strong>[DESCARGAR]</strong></a>
-	</li>
-	<br>
-	<br>
-    <li>   
-    <strong>Optimizador de windows 7 v2.0</strong><br>
-    <a href="https://ouo.io/T3k65g" target="_blank"><strong>[DESCARGAR]</strong></a>
-	</li>
-	<br>
-	<br>
-    <li>   
-    <strong>Optimizador de windows 7 v1.5</strong><br>
-    <a href="https://ouo.io/mJlsrX" target="_blank"><strong>[DESCARGAR]</strong></a>
-	</li>
-	<br>
-	<br>
-	<li>
-	<strong>Optimizador de windows xp v1.5</strong><br>
-	<a href="https://ouo.io/sBRGKnL" target="_blank"><strong>[DESCARGAR]</strong></a>
-	</li>
-	<br>
-	<br>
-	<li>
-	<strong>Optimizador de windows 7 v1</strong><br>
-	<a href="https://ouo.io/5c7kv7" target="_blank"><strong>[DESCARGAR]</strong></a>
-	</li>
-	<br>
-	<br>
-	<li>
-	<strong>Optimizador de windows xp v1</strong><br>
-	<a href="https://ouo.io/bvbaXE" target="_blank"><strong>[DESCARGAR]</strong></a>
-	</li>
-	
-  </ul>
-   </div>
- 
- 
     <div id="contenido-sistemas" class="tab-content">
-      <h2>Sección de Sistemas</h2>
-      <p>Windows optimizados para las canaima y pc de bajos recursos.</p>
-	 <ul>
-	  <li>
-	  <strong>Windows xp minios 2018 (x86)</strong>
-	  <br>
-	  <a href="https://ouo.io/maFBVQk" target="_blank"><strong>[DESCARGAR]</strong></a>
-	  <img src="img/windows xp.png" alt="no wifi triple xd" width="100">
-	  </li>
-	  
-	  <li>
-	  <strong>Windows 7 minios 2023 (x86)</strong>
-	  <br>
-	  <a href="https://ouo.io/0lKFzy1" target="_blank"><strong>[DESCARGAR]</strong></a>
-	  <img src="img/windows 7.png" alt="no wifi triple xd" width="100">
-	  </li>
-	  
-	  <li>
-	  <strong>Windows 7 minios Pro (x64)</strong>
-	  <br>
-	  <a href="https://ouo.io/duJaDKj" target="_blank"><strong>[DESCARGAR]</strong></a>
-	  <img src="img/windows 7.png" alt="no wifi triple xd" width="100">
-	  </li>
-	  
-	  <li>
-	  <strong>Windows 8 lite (x86)</strong>
-	  <br>
-	  <a href="https://ouo.io/wOCWufj" target="_blank"><strong>[DESCARGAR]</strong></a>
-	  <img src="img/windows 8.png" alt="no wifi triple xd" width="120">
-	  <p>Contraseña:Tech</p>
-	  </li>
-	  
-	  <li>
-	  <strong>Windows 10 minios X-1809 V26.02(x64)</strong>
-	  <br>
-	  <a href="https://ouo.io/cLCj7r" target="_blank"><strong>[DESCARGAR]</strong></a>
-	  <img src="img/windows 10.png" alt="no wifi triple xd" width="120">
-	  <p>Contraseña:dprojects</p>
-	  </li>
-	 </ul>
+      <h2 class="seccion-titulo">Windows Optimizados</h2>
+      <div class="grid-cards">
+        <div class="card"><strong>XP MiniOS 2018 (x86)</strong><img src="img/windows xp.png" alt="XP"><a href="https://ouo.io/maFBVQk" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>7 MiniOS 2023 (x86)</strong><img src="img/windows 7.png" alt="7"><a href="https://ouo.io/0lKFzy1" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>7 minios Pro (x64)</strong><img src="img/windows 7.png" alt="7 Pro"><a href="https://ouo.io/duJaDKj" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
+        <div class="card"><strong>Windows 8 Lite (x86)</strong><img src="img/windows 8.png" alt="8"><a href="https://ouo.io/wOCWufj" class="btn-descargar" target="_blank">⬇️ Descargar</a><p style="font-size:12px;">contraseña:Tech</p></div>
+        <div class="card"><strong>Windows 10 MiniOS X-1809 V26.02(x64)</strong><img src="img/windows 10.png" alt="10"><a href="https://ouo.io/cLCj7r" class="btn-descargar" target="_blank">⬇️ Descargar</a><p style="font-size:12px;">contraseña:dprojects</p></div>
+      </div>
     </div>
-  
-     <div id="contenido-como-descargar" class="tab-content">
-    <h2>Sección para Poder Saltar la Publicidad</h2>
-	<p>Aqui te dejo el mejor tutorial mas explicativo para poder saltar la publicidad</p>
-   <ul>   
-	 <li><a href="https://m.youtube.com/watch?v=QH3w7XKf8Ns" target="_blank"><strong>¡LINK DEL VIDEO!</strong></a></li>
-	 <br>
-	 <br>
-	 <p>Aqui mi canal de youtube</p>
-	 <li><a href="https://m.youtube.com/@Pobrecraftxd/videos" target="_blank"><strong>¡YOUTUBE!</strong></a></li>
-   </ul>	
+
+    
+    <div id="contenido-pack-de-optimizacion" class="tab-content">
+      <h2 class="seccion-titulo">Packs de Optimización</h2>
+      <div class="lista-simple">
+        <ul>
+          <li><strong>🔧 Optimizador Windows XP v2.0</strong>  <a href="https://ouo.io/ZkdG1I7" class="btn-descargar" style="padding:0.3rem 1rem;">Descargar</a></li>
+          <li><strong>🔧 Optimizador Windows 7 v2.0</strong>  <a href="https://ouo.io/T3k65g" class="btn-descargar" style="padding:0.3rem 1rem;">Descargar</a></li>
+          <li><strong>🔧 Optimizador Windows 7 v1.5</strong>  <a href="https://ouo.io/mJlsrX" class="btn-descargar" style="padding:0.3rem 1rem;">Descargar</a></li>
+          <li><strong>🔧 Optimizador Windows XP v1.5</strong> <a href="https://ouo.io/sBRGKnL" class="btn-descargar" style="padding:0.3rem 1rem;">Descargar</a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div id="contenido-como-descargar" class="tab-content">
+      <h2 class="seccion-titulo">📖 ¿Cómo saltar la publicidad?</h2>
+      <div class="lista-simple" style="text-align:center;">
+        <p>Mira este tutorial para saltar la publicidad:</p>
+        <a href="https://m.youtube.com/watch?v=QH3w7XKf8Ns" target="_blank" class="btn-descargar" style="display:inline-block; margin:1rem 0;">▶ VER TUTORIAL</a>
+        <p>Y no olvides visitar mi canal de YouTube:</p>
+        <a href="https://m.youtube.com/@Pobrecraftxd/videos" target="_blank" class="btn-descargar" style="background:#2563eb;">🎬 CANAL POBRECRAFT</a>
+      </div>
+    </div>
   </div>
-  </div>
-      
-  
-	
+
   <footer>
     <p>Creado por <strong>pobrecraft_15</strong></p>
   </footer>
+</div>
 
 </body>
 </html>
