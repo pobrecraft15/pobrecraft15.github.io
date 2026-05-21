@@ -399,8 +399,11 @@
     </div>
 
     
-    <div id="contenido-sistemas" class="tab-content">
-	  <div id="flash-grid" class="grid-cards">
+<div id="contenido-sistemas" class="tab-content">
+         <div class="search-box">
+         <input type="text" id="searchWindows" class="search-input" placeholder="❌ Buscar sistemas operativos Windows...">
+          </div
+         <div id="noResultsWindows" class="no-results">No se encontraron sistemas con ese nombre.</div>
         <div class="card" data-name="xp minios 2018 x86"><strong>XP MiniOS 2018 (x86)</strong><img src="img/windows xp.png" alt="XP"><a href="https://ouo.io/maFBVQk" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
         <div class="card" data-name="7 minios 2023 x86"><strong>7 MiniOS 2023 (x86)</strong><img src="img/windows 7.png" alt="7"><a href="https://ouo.io/0lKFzy1" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
         <div class="card" data-name="7 minios pro x64"><strong>7 minios Pro (x64)</strong><img src="img/windows 7.png" alt="7 Pro"><a href="https://ouo.io/duJaDKj" class="btn-descargar" target="_blank">⬇️ Descargar</a></div>
@@ -439,18 +442,32 @@
 </div>
 
 <script>
-// Función de búsqueda para PROGRAMAS
+const tabs = document.querySelectorAll('.tab-btn');
+const contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    contents.forEach(c => c.classList.remove('active'));
+    
+    tab.classList.add('active');
+    const target = document.getElementById(tab.getAttribute('data-target'));
+    if (target) target.classList.add('active');
+  });
+});
+
 const searchProgramas = document.getElementById('searchProgramas');
 const programasGrid = document.getElementById('programas-grid');
 const noResultsProgramas = document.getElementById('noResultsProgramas');
 
 function filtrarProgramas() {
+  if (!searchProgramas || !programasGrid) return;
   const term = searchProgramas.value.toLowerCase().trim();
   const cards = programasGrid.querySelectorAll('.card');
   let hasResults = false;
   
   cards.forEach(card => {
-    const name = card.getAttribute('data-name') || '';
+    const name = (card.getAttribute('data-name') || '').toLowerCase();
     if (term === '' || name.includes(term)) {
       card.style.display = 'flex';
       hasResults = true;
@@ -459,74 +476,56 @@ function filtrarProgramas() {
     }
   });
   
-  noResultsProgramas.style.display = hasResults ? 'none' : 'block';
+  if (noResultsProgramas) {
+    noResultsProgramas.style.display = hasResults ? 'none' : 'block';
+  }
 }
 
-searchProgramas.addEventListener('input', filtrarProgramas);
-searchProgramas.addEventListener('keypress', function(e) {
-  if (e.key === 'Enter') filtrarProgramas();
-});
+if (searchProgramas) {
+  searchProgramas.addEventListener('input', filtrarProgramas);
+}
 
-// Función de búsqueda para JUEGOS
 const searchJuegos = document.getElementById('searchJuegos');
 const juegosGrid = document.getElementById('juegos-grid');
-const flashGrid = document.getElementById('flash-grid');
 const noResultsJuegos = document.getElementById('noResultsJuegos');
 
 function filtrarJuegos() {
+  if (!searchJuegos || !juegosGrid) return;
   const term = searchJuegos.value.toLowerCase().trim();
+  const cards = juegosGrid.querySelectorAll('.card');
+  let hasResults = false;
   
-  // Filtrar juegos normales
-  const juegosCards = juegosGrid ? juegosGrid.querySelectorAll('.card') : [];
-  let hasJuegos = false;
-  
-  juegosCards.forEach(card => {
-    const name = card.getAttribute('data-name') || '';
+  cards.forEach(card => {
+    const name = (card.getAttribute('data-name') || '').toLowerCase();
     if (term === '' || name.includes(term)) {
       card.style.display = 'flex';
-      hasJuegos = true;
+      hasResults = true;
     } else {
       card.style.display = 'none';
     }
   });
   
-  // Filtrar juegos flash
-  const flashCards = flashGrid ? flashGrid.querySelectorAll('.card') : [];
-  let hasFlash = false;
-  
-  flashCards.forEach(card => {
-    const name = card.getAttribute('data-name') || '';
-    if (term === '' || name.includes(term)) {
-      card.style.display = 'flex';
-      hasFlash = true;
-    } else {
-      card.style.display = 'none';
-    }
-  });
-  
-  const hasResults = hasJuegos || hasFlash;
-  noResultsJuegos.style.display = hasResults ? 'none' : 'block';
+  if (noResultsJuegos) {
+    noResultsJuegos.style.display = hasResults ? 'none' : 'block';
+  }
 }
 
 if (searchJuegos) {
   searchJuegos.addEventListener('input', filtrarJuegos);
-  searchJuegos.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') filtrarJuegos();
-  });
 }
 
-// Función de búsqueda para WINDOWS
 const searchWindows = document.getElementById('searchWindows');
 const windowsGrid = document.getElementById('windows-grid');
 const noResultsWindows = document.getElementById('noResultsWindows');
 
 function filtrarWindows() {
+  if (!searchWindows || !windowsGrid) return;
   const term = searchWindows.value.toLowerCase().trim();
-  const cards = windowsGrid ? windowsGrid.querySelectorAll('.card') : [];
+  const cards = windowsGrid.querySelectorAll('.card');
   let hasResults = false;
   
   cards.forEach(card => {
-    const name = card.getAttribute('data-name') || '';
+    const name = (card.getAttribute('data-name') || '').toLowerCase();
     if (term === '' || name.includes(term)) {
       card.style.display = 'flex';
       hasResults = true;
@@ -542,13 +541,9 @@ function filtrarWindows() {
 
 if (searchWindows) {
   searchWindows.addEventListener('input', filtrarWindows);
-  searchWindows.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') filtrarWindows();
-  });
 }
 
-// Inicializar todo mostrado
 filtrarProgramas();
-if (searchJuegos) filtrarJuegos();
-if (searchWindows) filtrarWindows();
+filtrarJuegos();
+filtrarWindows();
 </script>
